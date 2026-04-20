@@ -5,6 +5,7 @@ import type { Department } from "./types/met";
 import "./App.css";
 import Artwork from "./components/Artwork";
 import { fetchAllArtworkIds } from "./api/artworkOfTheDay";
+import ArtworkOfTheDay from "./components/ArtworkOfTheDay";
 
 function App() {
   const [departments, setDepartments] = useState<Department[]>([]);
@@ -28,7 +29,7 @@ function App() {
       <section>
         <h1>The Metropolitan Museum of Art</h1>
 
-        <Artwork />
+        <ArtworkOfTheDay />
 
         <h3> Departments</h3>
         {loading && <p>Loading...</p>}

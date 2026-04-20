@@ -16,7 +16,9 @@ export async function getRandomArtworkId(): Promise<number | undefined> {
   return allIds[randomIndex];
 }
 
-export async function fetchExpandedArtworkByIndex(chosenIndex: number) {
+export async function fetchExpandedArtworkByIndex(
+  chosenIndex: number | Promise<number | undefined>,
+) {
   const response = await fetch(
     `https://collectionapi.metmuseum.org/public/collection/v1/objects/${chosenIndex}`,
   );
@@ -25,7 +27,7 @@ export async function fetchExpandedArtworkByIndex(chosenIndex: number) {
 }
 
 export async function fetchOneArtwork(
-  chosenIndex: Promise<number | undefined>,
+  chosenIndex: number | Promise<number | undefined>,
 ): Promise<ArtPiece | null> {
   const expanded = await fetchExpandedArtworkByIndex(chosenIndex);
   if (expanded.primaryImage !== "") {

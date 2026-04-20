@@ -53,17 +53,17 @@ export async function fetchOneArtwork(): Promise<ArtPiece> {
     objectName: expanded.objectName,
   };
 
-  // Commenting out the vanilla js piece
-
-  // const pictureFrame = document.getElementById("frame");
-  // const imgEl = document.createElement("img");
-  // imgEl.src = artPiece.primaryImage;
-  // imgEl.alt = artPiece.title;
-  // pictureFrame?.appendChild(imgEl);
-
   return artPiece;
 }
 
 // https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=3
 
 // fetchOneArtwork().then((artwork) => console.log(artwork));
+
+// Commenting out the vanilla js piece
+
+// const pictureFrame = document.getElementById("frame");
+// const imgEl = document.createElement("img");
+// imgEl.src = artPiece.primaryImage;
+// imgEl.alt = artPiece.title;
+// pictureFrame?.appendChild(imgEl);
